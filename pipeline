@@ -6,4 +6,7 @@ node {
 	}
 	}
 	}
+	stage("email trigger") {
+	echo "Here email trigger needs to be configured"
+	}
 }
