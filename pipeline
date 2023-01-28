@@ -1,7 +1,7 @@
 node {
 	stage("Git Checkout") {
 	dir (BUILD_ID){
-	git changelog: false, credentialsId: '1abc4b7e-a3ac-4207-9d0f-6504cf26f94e', poll: false, url: 'https://github.com/Birju-org/giri.git'
+	checkout([$class: 'GitSCM', branches: [[name: '${sha1}']], extensions: [], userRemoteConfigs: [[credentialsId: '01c5717b-857f-471d-b904-df7f27d11327', url: 'https://github.com/Birju-org/giri.git']]])
 	}
 	}
 	stage("email trigger") {
